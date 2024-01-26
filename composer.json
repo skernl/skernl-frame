@@ -1,0 +1,41 @@
+{
+    "name": "skernl/frame",
+    "description": "This is the skeleton of Skernl.",
+    "type": "project",
+    "keywords": [
+        "php",
+        "swoole",
+        "framework",
+        "skernl"
+    ],
+    "homepage": "https://www.wheakerd.cn/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wheakerd",
+            "email": "wheakerd@qq.com"
+        },
+        {
+            "name": "wheakerd",
+            "email": "wheakerd@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "skernl/di": "^0.0.3",
+        "swoole/ide-helper": "dev-master",
+        "ext-runkit7": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "GPBMetadata\\": "runtime/grpc/GPBMetadata",
+            "Grpc\\": "runtime/grpc/Grpc"
+        }
+    },
+    "minimum-stability": "dev",
+    "post-root-package-install": [
+        "@php -r \"file_exists('.env') || copy('.example.env', '.env');\"",
+        "composer dump-autoload -o"
+    ]
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option php_namespace = "Grpc\\UserCenter";
+option php_metadata_namespace = "GPBMetadata\\";
+
+package Test;
+
+service User {
+  rpc GetUserList (GetUserListAsk) returns (GetUserListReply) {
+
+  }
+}
+
+message GetUserListAsk {
+  int64 mobilePhone = 1;
+  string password = 2;
+}
+
+message GetUserListReply {
+  string result = 1;
+}
