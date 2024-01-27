@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use Composer\Autoload\ClassLoader;
 use Skernl\Context\ApplicationContext;
 use Skernl\Di\ClassesManager;
 
@@ -8,10 +9,12 @@ $startMemory = memory_get_usage();
 $startTime = microtime(true);
 
 $loaders = Composer\Autoload\ClassLoader::getRegisteredLoaders();
-$classMap = reset($loaders)->getClassMap();
-
+/**
+ * @var ClassLoader $classLoader ;
+ */
+$classLoader = reset($loaders);
 /** @noinspection PhpUnhandledExceptionInspection */
-$manager = new ClassesManager($classMap);
+$manager = new ClassesManager($classLoader);
 
 new ApplicationContext($manager->getContainer());
 
