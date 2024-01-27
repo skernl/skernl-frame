@@ -22,6 +22,7 @@
     ],
     "require": {
         "php": ">=8.3",
+        "skernl/context": "*",
         "skernl/di": "^0.0.3",
         "swoole/ide-helper": "dev-master",
         "ext-runkit7": "*"
