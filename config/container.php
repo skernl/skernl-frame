@@ -3,27 +3,26 @@ declare(strict_types=1);
 
 use Composer\Autoload\ClassLoader;
 use Skernl\Context\ApplicationContext;
-use Skernl\Di\ClassesManager;
+use Skernl\Contract\ApplicationContextInterface;
+use Skernl\Di\Container;
+use Skernl\Di\Source\SourceManager;
 
 $startMemory = memory_get_usage();
-$startTime = microtime(true);
+$startTime = hrtime(true);
 
-$loaders = Composer\Autoload\ClassLoader::getRegisteredLoaders();
 /**
- * @var ClassLoader $classLoader ;
+ * The anonymous function called here will create its own scope and maintain the interaction area from external
+ * contamination.
  */
-$classLoader = reset($loaders);
-/** @noinspection PhpUnhandledExceptionInspection */
-$manager = new ClassesManager($classLoader);
-
-new ApplicationContext($manager->getContainer());
-
+(function () {
+    $loaders = Composer\Autoload\ClassLoader::getRegisteredLoaders();
+    $container = new Container((new SourceManager(reset($loaders)))());
+    $container->get(ApplicationContextInterface::class);
+    new ApplicationContext($container);
+})();
 $endMemory = memory_get_usage();
-$endTime = microtime(true);
+$endTime = hrtime(true);
 
-$memoryUsed = $endMemory - $startMemory;
-$time = $endTime - $startTime;
-
-echo 'Time used: ' . $time . PHP_EOL;
-echo 'Memory used: ' . $memoryUsed . PHP_EOL;
+echo 'Time used: ' . $endTime - $startTime . PHP_EOL;
+echo 'Memory used: ' . $endMemory - $startMemory . PHP_EOL;
 echo 'Peak memory usage: ' . memory_get_peak_usage() . PHP_EOL;
