@@ -1,12 +1,6 @@
 #! /usr/bin/php
 <?php
 
-use Composer\Autoload\ClassLoader;
-use Skernl\Context\ApplicationContext;
-use Skernl\Contract\ApplicationContextInterface;
-use Skernl\Di\Container;
-use Skernl\Di\Source\SourceManager;
-
 ini_set('display_errors', 'on');
 ini_set('display_startup_errors', 'on');
 ini_set('memory_limit', '1G');
@@ -20,26 +14,21 @@ $startTime = hrtime(true);
 
 require BASE_PATH . '/vendor/autoload.php';
 
-/**
- * The anonymous function called here will create its own scope and maintain the interaction area from external
- * contamination.
- */
-(function () {
-    $loaders = ClassLoader::getRegisteredLoaders();
-//    $container =
-    (new SourceManager(reset($loaders)))();
-//    $container->get(ApplicationContextInterface::class);
-//    new ApplicationContext($container);
-    var_dump(spl_classes());
-})();
+/** @noinspection PhpUnhandledExceptionInspection */
+Skernl\Di\Source\SourceManager::init();
+
 $endMemory = memory_get_usage();
 $endTime = hrtime(true);
 
 echo 'Time used: ' . $endTime - $startTime . PHP_EOL;
 echo 'Memory used: ' . $endMemory - $startMemory . PHP_EOL;
 echo 'Peak memory usage: ' . memory_get_peak_usage() . PHP_EOL;
-require BASE_PATH . '/config/container.php';
 
+$container = require BASE_PATH . '/config/container.php';
+
+$application = $container->get(Skernl\Contract\ApplicationInterface::class);
+
+$application->run();
 
 //$startMemory = memory_get_usage();
 //$startTime = hrtime(true);
