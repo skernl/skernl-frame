@@ -19,16 +19,12 @@ $startTime = hrtime(true);
 require BASE_PATH . '/vendor/autoload.php';
 
 (function () {
-    Skernl\Di\Source\SourceManager::init();
     /*** @var Psr\Container\ContainerInterface $container */
-//    $container = require BASE_PATH . '/config/container.php';
-//    $container = new Container(new DefinitionSource());
-    $container = (new Container(new DefinitionSource()))->get(
+    $container = (new Container((new DefinitionSource())()))->get(
         ApplicationContextInterface::class
     )->getContainer();
-    $application = $container->get(Skernl\Contract\ApplicationInterface::class);
-    $application->run();
-})();
+    return $container->get(Skernl\Contract\ApplicationInterface::class);
+})()->run();
 
 $endMemory = memory_get_usage();
 $endTime = hrtime(true);
