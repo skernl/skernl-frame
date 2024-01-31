@@ -12,19 +12,24 @@ use App\Service\IndexService;
 class IndexController
 {
     public function __construct(
-        protected IndexService $indexService,
-        protected int          $num
+//        protected IndexService $indexService,
+//        protected int          $num
     )
     {
     }
 
+    public function ask()
+    {
+        return 123;
+    }
+
     public function print()
     {
-        return $this->num;
+//        return $this->num;
     }
 
     public function index(): string
     {
-        return 'Hello, Skernl!' . $this->indexService->enum();
+//        return 'Hello, Skernl!' . $this->indexService->enum();
     }
 }

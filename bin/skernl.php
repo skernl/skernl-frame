@@ -1,10 +1,6 @@
 #! /usr/bin/php
 <?php
 
-use Skernl\Contract\ApplicationContextInterface;
-use Skernl\Di\Container;
-use Skernl\Di\Source\DefinitionSource;
-
 ini_set('display_errors', 'on');
 ini_set('display_startup_errors', 'on');
 ini_set('memory_limit', '1G');
@@ -19,9 +15,11 @@ $startTime = hrtime(true);
 require BASE_PATH . '/vendor/autoload.php';
 
 (function () {
-    /*** @var Psr\Container\ContainerInterface $container */
-    $container = (new Container((new DefinitionSource())()))->get(
-        ApplicationContextInterface::class
+    Skernl\Di\Source\DefinitionSource::init();
+    $container = (new Skernl\Di\Container(
+        new Skernl\Di\Source\DefinitionSource()
+    ))()->get(
+        Skernl\Contract\ApplicationContextInterface::class
     )->getContainer();
     return $container->get(Skernl\Contract\ApplicationInterface::class);
 })()->run();
