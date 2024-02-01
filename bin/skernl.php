@@ -18,16 +18,9 @@ require BASE_PATH . '/vendor/autoload.php';
 (function () {
     Skernl\Container\Composer::init();
     return (new Skernl\Container\Container())->get(
-        Psr\Container\ContainerInterface::class
-    )->get(
-        Skernl\Framework\Application::class
+        Skernl\Di\DependencyInjection::class
     );
-})()->run();
-
-$ffi = FFI::cdef("
-    void* malloc(size_t size);
-    void free(void* ptr);
-", "libc.so.6");
+})()->register();
 
 $endMemory = memory_get_usage();
 $endTime = hrtime(true);

@@ -27,9 +27,4 @@ class IndexController
     {
 //        return $this->num;
     }
-
-    public function index(): string
-    {
-//        return 'Hello, Skernl!' . $this->indexService->enum();
-    }
 }
