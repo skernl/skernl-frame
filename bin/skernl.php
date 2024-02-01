@@ -1,15 +1,12 @@
 #! /usr/bin/php
 <?php
 
-use Skernl\Container\Container;
-use Skernl\Di\DependencyInjection;
-
 ini_set('display_errors', 'on');
 ini_set('display_startup_errors', 'on');
 ini_set('memory_limit', '1G');
 
 error_reporting(E_ALL);
-
+//
 !defined('BASE_PATH') && define('BASE_PATH', dirname(__DIR__));
 
 $startMemory = memory_get_usage();
@@ -17,22 +14,20 @@ $startTime = hrtime(true);
 
 require BASE_PATH . '/vendor/autoload.php';
 
+
 (function () {
     Skernl\Container\Composer::init();
-    return (new Container())->get(
-        DependencyInjection::class
+    return (new Skernl\Container\Container())->get(
+        Psr\Container\ContainerInterface::class
+    )->get(
+        Skernl\Framework\Application::class
     );
-})()->register();
+})()->run();
 
-//(function () {
-//    Skernl\Di\Source\DefinitionSource::init();
-//    $container = (new Skernl\Di\Container(
-//        new Skernl\Di\Source\DefinitionSource()
-//    ))()->get(
-//        Skernl\Contract\ApplicationContextInterface::class
-//    )->getContainer();
-//    return $container->get(Skernl\Contract\ApplicationInterface::class);
-//})()->run();
+$ffi = FFI::cdef("
+    void* malloc(size_t size);
+    void free(void* ptr);
+", "libc.so.6");
 
 $endMemory = memory_get_usage();
 $endTime = hrtime(true);

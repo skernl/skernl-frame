@@ -25,7 +25,8 @@
         "skernl/context": "*",
         "skernl/di": "^0.0.3",
         "swoole/ide-helper": "dev-master",
-        "ext-runkit7": "*"
+        "ext-runkit7": "*",
+        "ext-ffi": "*"
     },
     "autoload": {
         "psr-4": {
