@@ -1,6 +1,9 @@
 #! /usr/bin/php
 <?php
 
+use Skernl\Container\Container;
+use Skernl\Di\DependencyInjection;
+
 ini_set('display_errors', 'on');
 ini_set('display_startup_errors', 'on');
 ini_set('memory_limit', '1G');
@@ -15,7 +18,10 @@ $startTime = hrtime(true);
 require BASE_PATH . '/vendor/autoload.php';
 
 (function () {
-    return Skernl\Container\Composer::init()();
+    Skernl\Container\Composer::init();
+    return (new Container())->get(
+        DependencyInjection::class
+    );
 })()->register();
 
 //(function () {
