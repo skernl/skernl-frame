@@ -14,13 +14,13 @@ $startTime = hrtime(true);
 
 require BASE_PATH . '/vendor/autoload.php';
 
-
 (function () {
     Skernl\Container\Composer::init();
-    return (new Skernl\Container\Container())->get(
-        Skernl\Di\DependencyInjection::class
+    $container = (new Skernl\Di\Container())->register();
+    return $container->get(
+        Skernl\Context\Contract\ApplicationContextInterface::class
     );
-})()->register();
+})()->run();
 
 $endMemory = memory_get_usage();
 $endTime = hrtime(true);
