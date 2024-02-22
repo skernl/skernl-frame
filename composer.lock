@@ -1,0 +1,469 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "0a333aaefb03a1f05f2f70b7be8768ed",
+    "packages": [
+        {
+            "name": "psr/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "0a7c67d0d1c8167b342eb74339d6f961663826ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/0a7c67d0d1c8167b342eb74339d6f961663826ce",
+                "reference": "0a7c67d0d1c8167b342eb74339d6f961663826ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "suggest": {
+                "fig/cache-util": "Provides some useful PSR-6 utilities"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "time": "2021-02-24T03:25:37+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "707984727bd5b2b670e59559d3ed2500240cf875"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/707984727bd5b2b670e59559d3ed2500240cf875",
+                "reference": "707984727bd5b2b670e59559d3ed2500240cf875",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container"
+            },
+            "time": "2023-09-22T11:11:30+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
+            },
+            "time": "2023-04-04T09:54:51+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/3.0.0"
+            },
+            "time": "2021-07-14T16:46:02+00:00"
+        },
+        {
+            "name": "skernl/container",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skernl/container.git",
+                "reference": "3cd466f6126daff580db2b3df5908e6592a62088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skernl/container/zipball/3cd466f6126daff580db2b3df5908e6592a62088",
+                "reference": "3cd466f6126daff580db2b3df5908e6592a62088",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.3",
+                "skernl/contract": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Skernl\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@qq.com"
+                },
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@gmail.com"
+                }
+            ],
+            "keywords": [
+                "framework",
+                "php",
+                "skernl",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/skernl/container/issues",
+                "source": "https://github.com/skernl/container/tree/main"
+            },
+            "time": "2024-02-01T14:14:46+00:00"
+        },
+        {
+            "name": "skernl/context",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skernl/context.git",
+                "reference": "3cd466f6126daff580db2b3df5908e6592a62088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skernl/context/zipball/3cd466f6126daff580db2b3df5908e6592a62088",
+                "reference": "3cd466f6126daff580db2b3df5908e6592a62088",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.3",
+                "skernl/contract": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Skernl\\Context\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@qq.com"
+                },
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@gmail.com"
+                }
+            ],
+            "keywords": [
+                "framework",
+                "php",
+                "skernl",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/skernl/context/issues",
+                "source": "https://github.com/skernl/context/tree/main"
+            },
+            "time": "2024-02-01T14:14:46+00:00"
+        },
+        {
+            "name": "skernl/contract",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skernl/contract.git",
+                "reference": "d941d0374105a50e24b532270e2616b45ffe5186"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skernl/contract/zipball/d941d0374105a50e24b532270e2616b45ffe5186",
+                "reference": "d941d0374105a50e24b532270e2616b45ffe5186",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/cache": "^3.0.0",
+                "psr/container": "^2.0.2",
+                "psr/http-message": "^2.0",
+                "psr/log": "^3.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Skernl\\Contract\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@qq.com"
+                },
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@gmail.com"
+                }
+            ],
+            "keywords": [
+                "framework",
+                "php",
+                "skernl",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/skernl/contract/issues",
+                "source": "https://github.com/skernl/contract/tree/main"
+            },
+            "time": "2024-02-01T14:15:22+00:00"
+        },
+        {
+            "name": "skernl/di",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skernl/di.git",
+                "reference": "9877dc0444b8d2c225e95e21339236c4764c859d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skernl/di/zipball/9877dc0444b8d2c225e95e21339236c4764c859d",
+                "reference": "9877dc0444b8d2c225e95e21339236c4764c859d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-runkit7": "*",
+                "php": ">=8.3",
+                "skernl/contract": "dev-main",
+                "swoole/ide-helper": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "test/App/",
+                    "Skernl\\Di\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wheakerd",
+                    "email": "wheakerd@qq.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/skernl/di/issues",
+                "source": "https://github.com/skernl/di/tree/v0.0.3"
+            },
+            "time": "2024-01-26T07:16:32+00:00"
+        },
+        {
+            "name": "swoole/ide-helper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swoole/ide-helper.git",
+                "reference": "33ec7af9111b76d06a70dd31191cc74793551112"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/33ec7af9111b76d06a70dd31191cc74793551112",
+                "reference": "33ec7af9111b76d06a70dd31191cc74793551112",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Team Swoole",
+                    "email": "team@swoole.com"
+                }
+            ],
+            "description": "IDE help files for Swoole.",
+            "support": {
+                "issues": "https://github.com/swoole/ide-helper/issues",
+                "source": "https://github.com/swoole/ide-helper/tree/5.1.2"
+            },
+            "time": "2024-02-01T22:28:11+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "swoole/ide-helper": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.3",
+        "ext-runkit7": "*",
+        "ext-ffi": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
